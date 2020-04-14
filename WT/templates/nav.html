@@ -1,0 +1,55 @@
+{% load static %}
+{% load cart_template_tags %}
+<!-- Header -->
+<header class="header1">
+		<!-- Header desktop -->
+		<div class="container-menu-header">
+
+			<div class="wrap_header">
+				<!-- Logo -->
+				<a href="/" class="logo">
+					<img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO">
+				</a>
+
+				<!-- Menu -->
+				<div class="wrap_menu">
+					<nav class="menu">
+						<ul class="main_menu">
+							<li>
+								<a href="/">Home</a>
+								
+							</li>
+
+							<li>
+								<a href="shop/">Shop</a>
+							</li>
+
+							{% if request.user.is_authenticated %}
+							<li>
+								<a href="{% url 'core:order-summary' %}">Cart<span class="badge badge-dark">{{ request.user|cart_item_count }}</span></a>
+							</li>
+							<li>
+								<a href="{% url 'account_logout' %}">Logout</a>
+							</li>
+							{% else %}
+							<li>
+								<a href="{% url 'account_login' %}">Login</a>
+							</li>
+							<li>
+								<a href="{% url 'account_signup' %}">SignUp</a>
+							</li>
+							{% endif %}
+						</ul>
+					</nav>
+				</div>
+
+				<!-- Header Icon -->
+				<div class="header-icons">
+					<a href="#" class="header-wrapicon1 dis-block">
+						<img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON">
+					</a>
+
+				</div>
+			</div>
+		</div>
+</header>
