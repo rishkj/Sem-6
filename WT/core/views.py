@@ -322,7 +322,7 @@ def remove_single_item_from_cart(request, slug):
             return redirect("core:product", slug=slug)
     else:
         # add a message saying the user dosent have an order
-        messages.info(request, "u don't have an active order.")
+        messages.info(request, "You don't have an active order.")
         return redirect("core:product", slug=slug)
     return redirect("core:product", slug=slug)
 
@@ -350,7 +350,7 @@ class AddCouponView(View):
                 return redirect("core:checkout")
 
             except ObjectDoesNotExist:
-                messages.info(request, "You do not have an active order")
+                messages.info(self.request, "You do not have an active order")
                 return redirect("core:checkout")
 
 
