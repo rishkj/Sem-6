@@ -1,0 +1,154 @@
+C Library For Intals
+
+
+
+Rishabh Jain
+PES1201700099
+Advanced Problem Solving
+
+
+
+
+
+
+
+INTRODUCTION
+
+An intal can be defined as a non-negative integer of arbitrary length. It is stored in the form of a null-terminated string of ASCII characters. Intals are represented by a string containing only decimal digits from ‘0’ to ‘9’, stored in big-endian style ( the most significant digit is in the beginning of the string).
+
+An intal is different from an integer because while the intal represents an integer, it exists in the form of a string. Also, while an integer represents both positive and negative values, an intal only stores non-negative integers in the form of a string. An intal also differs from the other integer types in terms of the maximum value that can be represented and the storage required for each. Each integer data type has a fixed storage that it can occupy. The maximum storage given to any integer type is usually 4 bytes. So, the maximum value that can be stored by an integer data type has 10 digits. However, as intals are stored in the form of a string, each digit is stored as a character and gets 1 byte of memory. This allows intals to store much more than 10 digits. This makes storage of large numbers and computations on them possible.
+
+An application of intals is that it can be used where regular integers can not, mainly in the case where we need to work with extremely large integers which can not be stored in a data type that supports numbers. This ensures we can work with extremely large numbers without losing any data. 
+
+
+
+APPROACH
+
+I. intal_add()
+
+This function adds two intals together, and returns the result. We start from the least significant digit of each intal, and convert them to integers. We calculate the sum of two digits and the carry, and if the result exceeds 10 we store the most significant digit of the result in the carry to be used during the sum of the next two integers, and the least significant digit in the intal representing the result. After successfully parsing through both intals, we have our final result stored as an intal in a character pointer, which is returned by our function to the function that placed the call. 
+
+Time Complexity : O(n)
+n = strlen(max(intal1,intal2))
+
+
+II. intal_compare()
+
+In this function, we first calculate the length of each intal. We then perform initial checks to see if any intal has a greater length than the other, because an intal with greater length has a greater value, and parsing through the intal isn’t required. If both intals have equal length, starting from the most significant digit of each intal, the corresponding digits of each intal are compared, and the moment there is a mismatch between the two digits, we know one intal is greater than the other. If the end of each intal is reached without any mismatch, both intals store the same integer. This function returns 1 if the first intal is greater, 0 if both are equal, and -1 if the second intal is greater. 
+
+Time Complexity : O(n)
+n = strlen(max(intal1,intal2))
+
+
+III. intal_diff()
+
+In this function, the absolute value of the difference between the two intals is obtained and returned. In order to ensure a positive difference, the two intals are first compared. If they are equal, we know the final answer is 0 and we return the result directly. Otherwise, we know which intal is smaller and that is always subtracted from the bigger intal. We start from the least significant digit of each intal, and check to see if the value of the digit of the bigger intal is lower than the value of the digit of the smaller intal. If it is, we add 10 to it and set the carry to 1, to be removed from the next digit of the bigger intal. This continues until the final intal is stored in a character array, which is then returned to the calling function. 
+
+Time Complexity : O(n)
+n = strlen(max(intal1,intal2))
+
+
+IV. intal_multiply()
+
+This function returns the product of the two intals. Initially, we check to see if the value of any of the intals is 0, because we then know the final result will be 0, and we can return that directly. In case both intals are positive numbers, we obtain the result by using partial products. We keep on multiplying the bottom intal with the top intal one digit at a time, and updating an integer array with the result. When we have successfully parsed through both the intals, we convert the integer array into an intal, and return the intal to the calling function.
+
+Time Complexity : O(n*m)
+n = strlen(intal1)
+m = strlen(intal2)
+
+
+V. intal_mod()
+
+We needed to come up with an algorithm that doesn’t take intal1/intal2 time for all intals, because then the time limit would be exceeded. So, to get past that, we append zeros to intal2 until its value is very close to intal1, and then perform subtractions. This reduces the number of subtractions required by a large amount, in case the initial difference between intal1 and intal2 is very high. If the value of intal1 becomes lower than the new value of intal2, we remove one zero from the new value of intal2 and try again. This process continues until intal1 is lower than the initial value of intal2. The final value of intal1 is the remainder, which is returned to the calling function.
+
+Time Complexity : O(intal1/intal2)
+
+
+VI. intal_pow()
+
+Here, we find the value of the intal raised to a specific power. We initially check if the power is 0, because any integer raised to the power of zero will be 1, so we can return 1 in the form of an intal. Another base case check is performed, where the base intal is compared to 0. If it is 0, we know 0 raised to any power will give us 0, and we return 0 in the form of an intal. In case these base checks come out false, the body of the function is entered where calculations are performed to get the result. Memory is allocated for storing the result, and it initially stores 1. We also create a temporary intal that initially stores the value of the base intal. We continuously keep dividing the value of the power by 2. In case the value of the power is odd, we multiply result with the value stored in the temporary intal, and store that in result. The temporary intal is multiplied with itself, and then the power is divided by 2. In the end, the result contains the final intal. This is returned to the calling function.
+
+Time Complexity : O(Log n)
+
+
+VII. intal_gcd()
+
+Euclid’s algorithm is used to determine the greatest common divisor of two intals. First we compare the two intals, and if they are equal then the value either holds is the value of the GCD, which can be returned. Otherwise, the greater intal is passed as the first parameter and smaller intal as the second parameter to a user-defined static recursive function. In that function, until the second intal does not equal 0, we calculate the remainder when the first intal is divided by the second, and then the function places a call to itself with the second intal as its first parameter and remainder as its second parameter. This remainder will always be smaller than the second intal. When the second intal parameter is finally equal to 0, we return the value in first intal parameter at that point, back through all the function calls to the initial calling function. That is our GCD. 
+
+Time Complexity : O(Log min(intal1,intal2))
+
+
+VIII. intal_fibonacci()
+
+The nth Fibonacci number is returned by this function. To use constant space, we have two character pointers pointing to the previous intals, and their sum is obtained. Then the first pointer points to the second intal, the second pointer points to sum obtained, and the intals stored are added again to get the next number in the sequence. This process continues until we have obtained the nth intal. This intal is then returned to the calling function. 
+
+Time Complexity : O(n)
+
+
+IX. intal_factorial()
+
+An initial check is performed to see if the number we have to find factorial of is 0. If it is, we can return 1 directly. Otherwise, we have a temporary character pointer storing 1 and the result character pointer storing 1initially, and we continuously multiply the temporary intal with the result intal and store that in the result intal. We then increase the value present in the temporary intal by 1 and perform the procedure again. This continues until the temporary intal equals the value we had to find the factorial of. We then return the result intal to the calling function. 
+
+Time Complexity : O(n)
+
+
+X. intal_bincoeff()
+
+The formula C(n,k) = C(n-1,k) + C(n-1,k-1) is used. We take O(k) extra space by maintaining an array of k intals to store the values of C(n,0) till C(n,k). We start from C(1,0) and keep on incrementing the second parameter till it reaches k or is equal to the first parameter. If the first parameter now has a value of x, the array will store the intals generated for x-1. From that, the formula written above is applied and the array is updated. After that, we increase the first parameter and repeat this process again, until we reach n and k. That intal is returned to the calling function.
+
+Time Complexity : O(nk)
+
+
+XI. intal_max()
+
+In this function, we iterate through the entire array of intals, and compare each intal to the intal we believe to be the greatest at that point of time, using intal_compare(). In case the current intal has a greater value, we store its index in a variable and now the remaining intals will be compared to the intal present at this index. When we have iterated through all the intals, the index we have stored in the end represents the location of the intal with maximum value, and is returned to the calling function. 
+
+Time Complexity : O(n)
+
+
+XII. intal_min()
+
+In this function, we iterate through the entire array of intals, and compare each intal to the intal we believe to be the least at that point of time, using intal_compare(). In case the current intal has a lower value, we store its index in a variable and now the remaining intals will be compared to the intal present at this index. When we have iterated through all the intals, the index we have stored in the end represents the location of the intal with minimum value, and is returned to the calling function. 
+
+Time Complexity : O(n)
+
+
+XIII. intal_search()
+
+The algorithm implemented searches for the given key in linear time, by comparing each intal to the key using intal_compare(), and if a match is found the index that intal is present at is returned. If we have reached the end of the array of intals without finding a match, -1 is returned to indicate that the key intal isn’t present in the array.
+
+Time Complexity : O(n)
+
+
+XIV. intal_binsearch()
+
+This algorithm is also used to search for the key in the array of intals, except that the array of intals is sorted here, hence we take only logarithmic time to either locate the key intal or declare it isn’t in the array. We start with comparing the middle intal of the array to the key. If the middle intal is greater than the key, we know the key lies to the left of that intal, and we make rear point to the intal just before that middle intal. If its lower than the key, the key lies to the right of that intal, and we make front point to the intal right after the middle intal. If they are equal, we return the index. Middle will be calculated again with the new front and rear positions. This process is repeated until the key is found or front is greater than rear. If not found, -1 is returned.
+
+ Time Complexity : O(Log n)
+
+
+XV. intal_sort()
+
+Merge sort algorithm has been implemented to sort the array of intals in the required time complexity. A user-defined static recursive function called merge has been created, which continues to divide the array into smaller and smaller halves, and when only one element is present in each half, it starts to sort the array from bottom up, until the final array is completed sorted.
+
+Time Complexity : O(n Log n)
+
+
+XVI. coin_row_problem()
+
+In order to use constant space, we use two character arrays to store the total value calculated at the odd index and even index so far. We start from the beginning of the array, and calculate the sum of the coin at that index with the character pointer for the odd index, if the current index is odd, or even index if current index is even. Let us say we are at an even index. If the sum of the intal value at the even index pointer and current intal is greater than the value at the odd index pointer, we can store the sum as the new value in the even intal pointer. Otherwise, the value in the odd index pointer is stored in the even index pointer. Finally, the maximum sum calculated is returned to the calling function.
+
+Time Complexity : O(n)
+
+
+FUTURE WORK
+
+Some more functionalities that could be added to the intal library could be finding the LCM of two intals, checking if the given intal is a power of another number, and the coin change problem to name a few.
+
+If I had no restrictions, I think I would try to write as many algorithms as possible for all the different possible algorithms we could do on regular integers, to be applied on intals. That way, anyone who needs to work with very large numbers can use my library and most probably find the function they need to be applied and use it, instead of having to implement it themselves.
+
+
+
+
+
+
