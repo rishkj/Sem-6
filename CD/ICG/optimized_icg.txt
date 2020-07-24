@@ -1,0 +1,33 @@
+b = 0
+a = 5
+c = 0
+i = 0
+L0:
+t0 = i < a
+t1 = not t0
+if t1 GOTO L1
+b = 1
+i = i + 1
+GOTO L0
+L1:
+L2:
+b = b + 2
+c = 10
+t4 = b == 5
+t5 = not t4
+if t5 GOTO L4
+GOTO L3
+L4:
+t6 = c < a
+if t6 GOTO L2
+L3:
+t7 = 0 < b
+t8 = not t7
+if t8 GOTO L5
+t9 = a < b
+t10 = not t9
+if t10 GOTO L6
+a = 10
+print a
+L6:
+L5:

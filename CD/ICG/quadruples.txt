@@ -1,0 +1,36 @@
+Pos		                  Op		                Arg1		                Arg2		                 Res
+
+1		                   =		                   0		                    		                   a
+2		                   =		                   0		                    		                   b
+3		                   =		                   5		                    		                   a
+4		                   =		                   b		                    		                   c
+5		                   =		                   0		                    		                   i
+6		                   <		                   i		                   a		                  t0
+7		                 not		                  t0		                    		                  t1
+8		                  if		                  t1		                    		                  L1
+9		                   +		                   i		                   1		                  t2
+10		                   =		                  t2		                    		                   i
+11		                   =		                   1		                    		                   b
+12		                goto		                    		                    		                  L0
+13		                   =		            4.200000		                    		                  z1
+14		                   =		            4.800000		                    		                  z2
+15		                   +		                   b		                   2		                  t3
+16		                   =		                  t3		                    		                   b
+17		                   =		                  10		                    		                   c
+18		                  ==		                   b		                   5		                  t4
+19		                 not		                  t4		                    		                  t5
+20		                  if		                  t5		                    		                  L4
+21		                goto		                    		                    		                  L3
+22		                   <		                   c		                   a		                  t6
+23		                  if		                  t6		                    		                  L2
+24		                   <		                   c		                   b		                  t7
+25		                 not		                  t7		                    		                  t8
+26		                  if		                  t8		                    		                  L5
+27		                   <		                   a		                   b		                  t9
+28		                 not		                  t9		                    		                 t10
+29		                  if		                 t10		                    		                  L6
+30		                   =		                  10		                    		                   a
+31		               print		                    		                    		                   a
+32		                   /		                   a		                   b		                 t11
+33		                   +		                 t11		                   c		                 t12
+34		                   =		                 t12		                    		                   d

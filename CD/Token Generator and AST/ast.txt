@@ -1,0 +1,277 @@
+<Main Tree>
+	<Declaration>
+		<Type> int
+		<Declared Vars>
+			<Var> a
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> b
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Int Constant> 0
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+		<Declared Vars Closed>
+	<Declaration Closed>
+	<Assign Exp>
+		<Assign Exp oper> =
+		<Var Getting Val>
+			<Var> e
+		<Var Getting Val Closed>
+		<Val Being Assigned>
+			<Int Constant> 5
+		<Val Being Assigned Closed>
+	<Assign Exp Closed>
+	<Declaration>
+		<Type> int
+		<Declared Vars>
+			<Var> f
+		<Declared Vars Closed>
+	<Declaration Closed>
+	<Declaration>
+		<Type> int
+		<Declared Vars>
+			<Var> f
+		<Declared Vars Closed>
+	<Declaration Closed>
+	<Assign Exp>
+		<Assign Exp oper> =
+		<Var Getting Val>
+			<Var> a
+		<Var Getting Val Closed>
+		<Val Being Assigned>
+			<Int Constant> 5
+		<Val Being Assigned Closed>
+	<Assign Exp Closed>
+	<Declaration>
+		<Type> int
+		<Declared Vars>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> c
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Var> b
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+		<Declared Vars Closed>
+	<Declaration Closed>
+	<For Loop>
+		<For Init>
+			<Declaration>
+				<Type> int
+				<Declared Vars>
+					<Assign Exp>
+						<Assign Exp oper> =
+						<Var Getting Val>
+							<Var> i
+						<Var Getting Val Closed>
+						<Val Being Assigned>
+							<Int Constant> 0
+						<Val Being Assigned Closed>
+					<Assign Exp Closed>
+				<Declared Vars Closed>
+			<Declaration Closed>
+		<For Init Closed>
+		<For Cond>
+			<Rel Exp>
+				<Rel Exp oper> <
+				<Left Operand>
+					<Var> i
+				<Left Operand Closed>
+				<Right Operand>
+					<Var> a
+				<Right Operand Closed>
+			<Rel Exp Closed>
+		<For Cond Closed>
+		<For Upd>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> i
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Arit Exp>
+						<Arit Exp oper> +
+						<Left Operand>
+							<Var> i
+						<Left Operand Closed>
+						<Right Operand>
+							<Int Constant> 1
+						<Right Operand Closed>
+					<Arit Exp Closed>
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+		<For Upd Closed>
+		<For Body>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> b
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Int Constant> 1
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+		<For Body Closed>
+	<For Loop Closed>
+	<Declaration>
+		<Type> float
+		<Declared Vars>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> z1
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Float Constant> 4.200000
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> z2
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Float Constant> 4.800000
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+		<Declared Vars Closed>
+	<Declaration Closed>
+	<Do While Loop>
+		<Do While Exp>
+			<Rel Exp>
+				<Rel Exp oper> <
+				<Left Operand>
+					<Var> c
+				<Left Operand Closed>
+				<Right Operand>
+					<Var> a
+				<Right Operand Closed>
+			<Rel Exp Closed>
+		<Do While Exp Closed>
+		<Do While Body Cond>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> b
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Arit Exp>
+						<Arit Exp oper> +
+						<Left Operand>
+							<Var> b
+						<Left Operand Closed>
+						<Right Operand>
+							<Int Constant> 2
+						<Right Operand Closed>
+					<Arit Exp Closed>
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> c
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Int Constant> 10
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+			<If>
+				<If Exp>
+					<Rel Exp>
+						<Rel Exp oper> ==
+						<Left Operand>
+							<Var> b
+						<Left Operand Closed>
+						<Right Operand>
+							<Int Constant> 5
+						<Right Operand Closed>
+					<Rel Exp Closed>
+				<If Exp Closed>
+				<If Body Cond>
+					<Jump Statement>
+						<JS Type> break
+					<Jump Statement Closed>
+				<If Body Closed>
+			<If Closed>
+		<Do While Body Closed>
+	<Do While Loop Closed>
+	<If>
+		<If Exp>
+			<Rel Exp>
+				<Rel Exp oper> <
+				<Left Operand>
+					<Var> c
+				<Left Operand Closed>
+				<Right Operand>
+					<Var> b
+				<Right Operand Closed>
+			<Rel Exp Closed>
+		<If Exp Closed>
+		<If Body Cond>
+			<If>
+				<If Exp>
+					<Rel Exp>
+						<Rel Exp oper> <
+						<Left Operand>
+							<Var> a
+						<Left Operand Closed>
+						<Right Operand>
+							<Var> b
+						<Right Operand Closed>
+					<Rel Exp Closed>
+				<If Exp Closed>
+				<If Body Cond>
+					<Assign Exp>
+						<Assign Exp oper> =
+						<Var Getting Val>
+							<Var> a
+						<Var Getting Val Closed>
+						<Val Being Assigned>
+							<Int Constant> 10
+						<Val Being Assigned Closed>
+					<Assign Exp Closed>
+					<Print>
+						<Print oper> <<
+						<Print Val>
+							<Var> a
+						<Print Val Closed>
+					<Print Closed>
+				<If Body Closed>
+			<If Closed>
+		<If Body Closed>
+	<If Closed>
+	<Declaration>
+		<Type> int
+		<Declared Vars>
+			<Assign Exp>
+				<Assign Exp oper> =
+				<Var Getting Val>
+					<Var> d
+				<Var Getting Val Closed>
+				<Val Being Assigned>
+					<Arit Exp>
+						<Arit Exp oper> /
+						<Left Operand>
+							<Var> a
+						<Left Operand Closed>
+						<Right Operand>
+							<Arit Exp>
+								<Arit Exp oper> +
+								<Left Operand>
+									<Var> b
+								<Left Operand Closed>
+								<Right Operand>
+									<Var> c
+								<Right Operand Closed>
+							<Arit Exp Closed>
+						<Right Operand Closed>
+					<Arit Exp Closed>
+				<Val Being Assigned Closed>
+			<Assign Exp Closed>
+		<Declared Vars Closed>
+	<Declaration Closed>
+<Main Tree Closed>
