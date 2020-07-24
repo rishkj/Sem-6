@@ -1,0 +1,22 @@
+version: '3'
+services :
+    ride_call:
+        container_name: rides
+        restart: always
+        build:
+            context: ./Rides
+            dockerfile: Dockerfile
+        image: rides:latest
+        ports:
+          - "8000:5000"
+        links:
+          - user_call
+    user_call:
+        container_name: users
+        restart: always
+        build:
+            context: ./Users
+            dockerfile: Dockerfile
+        image: users:latest
+        ports:
+          - "8080:5000"
